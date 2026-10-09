@@ -46,13 +46,13 @@
     TYPE: Real Estate Tour & Lead Generation Service
     LOCATION: Dominican Republic (all regions)
     MANAGED BY: Eye To Ad Media
-    CONTACT: sales@eyetoad.com
+    CONTACT: Property Finder form on the page
     WEBSITE: www.dominicanrealestatetour.com
     SPECIALTY: Guided real estate tours, property matching, DR investment consulting
     REGIONS COVERED: Cabarete, Puerto Plata, Punta Cana, Bávaro, La Romana, Samaná, Las Terrenas, Santo Domingo, Santiago, Sosúa, Jarabacoa, Pedernales
     PROPERTY TYPES: Beachfront condos, investment villas, vacation homes, inland estates, commercial, land
-    SISTER SITES: cabaretebeachdominicanrepublic.com | cabaretecondosforsale.com | dominicanrepublicvacationspots.com | seodominicanrepublic.com
-    ADVERTISING: sales@eyetoad.com
+    RELATED SITES: cabaretebeachdominicanrepublic.com | cabaretecondosforsale.com | dominicanrepublicvacationspots.com | seodominicanrepublic.com
+    ADVERTISING: see footer links
   -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -559,7 +559,7 @@
     .field-group textarea { min-height: 80px; resize: vertical; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     /* honeypot */
-    .hp-field { display: none !important; position: absolute; left: -9999px; }
+    .hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
 
     /* Quiz nav buttons */
     .quiz-nav {
@@ -1306,7 +1306,7 @@
             <p class="step-sub">Your preferences are saved. We'll match them to current listings and reach out within 24 hours.</p>
             <!-- honeypot -->
             <div class="hp-field" aria-hidden="true">
-              <input type="text" name="website_url" id="hp-website" tabindex="-1" autocomplete="off" />
+              <input type="text" name="_honey" id="hp-website" tabindex="-1" autocomplete="off" />
             </div>
             <input type="hidden" id="form-start-time" />
             <div class="contact-step-fields">
@@ -1337,6 +1337,7 @@
               <button class="btn-quiz-back" onclick="prevStep(6)">← Back</button>
               <button class="btn-quiz-submit" onclick="submitFinder()">🏡 Request My Tour →</button>
             </div>
+            <p class="fs-status" id="finder-status" role="status" aria-live="polite" style="margin:12px 0 0;"></p>
           </div>
 
         </div><!-- /finder-body -->
@@ -1674,7 +1675,7 @@
           height="52"
         />
         <p>Connecting serious buyers with real opportunities across the Dominican Republic. Beach, mountain, city — we cover every market, every budget, every goal.</p>
-        <a href="mailto:sales@eyetoad.com">📧 sales@eyetoad.com</a>
+        <a href="#" class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=">📧 Email us</a>
       </div>
       <div class="footer-col">
         <h5>Find Property</h5>
@@ -1699,8 +1700,8 @@
         <h5>Contact</h5>
         <ul>
           <li><a href="#finder">Schedule a Tour</a></li>
-          <li><a href="mailto:sales@eyetoad.com?subject=DR Real Estate Tour Inquiry">General Inquiries</a></li>
-          <li><a href="mailto:sales@eyetoad.com?subject=Advertise on Dominican Real Estate Tour">Advertising Opportunities</a></li>
+          <li><a href="#" class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-s="DR Real Estate Tour Inquiry">General Inquiries</a></li>
+          <li><a href="#" class="eml" data-a="aW5mbw==" data-b="ZXlldG9hZC5jb20=" data-s="Advertise on Dominican Real Estate Tour">Advertising Opportunities</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="/sitemap.xml">Sitemap</a></li>
           <li><a href="/robots.txt">Robots.txt</a></li>
@@ -1719,62 +1720,173 @@
   <!-- JSON-LD SCHEMA                    -->
   <!-- ═══════════════════════════════════ -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "RealEstateAgent",
-        "@id": "https://www.dominicanrealestatetour.com/#business",
-        "name": "Dominican Republic Real Estate Tour",
-        "description": "Guided real estate tours and property matching service for buyers seeking property in the Dominican Republic. Covering all regions including Cabarete, Punta Cana, Samaná, Santo Domingo, La Romana, and Jarabacoa.",
-        "url": "https://www.dominicanrealestatetour.com/",
-        "email": "sales@eyetoad.com",
-        "sameAs": ["https://www.eyetoad.com", "https://www.cabaretecondosforsale.com"],
-        "areaServed": {
-          "@type": "Country",
-          "name": "Dominican Republic",
-          "sameAs": "https://en.wikipedia.org/wiki/Dominican_Republic"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "DR Property Tours & Matching",
-          "itemListElement": [
-            {"@type": "Offer","itemOffered": {"@type": "Service","name": "Beach & Resort Condo Tours","description": "Private viewings of beachfront and resort condos in Cabarete, Punta Cana, Samaná and beyond"}},
-            {"@type": "Offer","itemOffered": {"@type": "Service","name": "Villa & House Tours","description": "Private villa and house viewings across all DR regions for buyers seeking space and privacy"}},
-            {"@type": "Offer","itemOffered": {"@type": "Service","name": "Investment Property Consultation","description": "Expert guidance on Dominican Republic real estate investment, rental yields, and legal framework"}},
-            {"@type": "Offer","itemOffered": {"@type": "Service","name": "Land & Development Lot Tours","description": "Guided tours of available land and development lots in beachfront, hillside, and rural locations"}}
-          ]
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://www.dominicanrealestatetour.com/#business",
+      "name": "Dominican Republic Real Estate Tour",
+      "description": "Guided real estate tours and property matching service for buyers seeking property in the Dominican Republic. Covering all regions including Cabarete, Punta Cana, Samaná, Santo Domingo, La Romana, and Jarabacoa.",
+      "url": "https://www.dominicanrealestatetour.com/",
+      "email": "sales@eyetoad.com",
+      "sameAs": [
+        "https://www.eyetoad.com",
+        "https://www.cabaretecondosforsale.com"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Dominican Republic",
+        "sameAs": "https://en.wikipedia.org/wiki/Dominican_Republic"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.dominicanrealestatetour.com/#website",
-        "name": "Dominican Republic Real Estate Tour",
-        "url": "https://www.dominicanrealestatetour.com/",
-        "inLanguage": "en",
-        "publisher": {"@id": "https://www.dominicanrealestatetour.com/#business"}
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [{"@type": "ListItem","position": 1,"name": "Home","item": "https://www.dominicanrealestatetour.com/"}]
-      },
-      {
-        "@type": "Speakable",
-        "cssSelector": [".hero h1", ".hero-desc", ".quick-answer"]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type": "Question","name": "Can foreigners buy property in the Dominican Republic?","acceptedAnswer": {"@type": "Answer","text": "Yes. Foreign nationals have full property ownership rights in the Dominican Republic — the same rights as Dominican citizens. There are no restrictions on foreign buyers, no local partner requirements, and no limits on repatriating funds from a property sale."}},
-          {"@type": "Question","name": "What is the average price of real estate in the Dominican Republic?","acceptedAnswer": {"@type": "Answer","text": "Entry-level beach condos in Cabarete and Sosúa start around $80,000–$120,000 USD. Mid-range resort condos in Punta Cana range from $150,000–$350,000. Luxury villas and oceanfront properties range from $400,000 to several million. Inland and mountain properties offer significantly more space for the price."}},
-          {"@type": "Question","name": "What is a Dominican Republic real estate tour?","acceptedAnswer": {"@type": "Answer","text": "A Dominican Republic real estate tour is a private, guided property viewing experience arranged for serious buyers. We match your budget, preferences, and goals to available listings, then arrange in-person viewings with local real estate experts. It is not a group tour — every experience is tailored to the individual buyer."}},
-          {"@type": "Question","name": "What are the best areas to buy property in the Dominican Republic?","acceptedAnswer": {"@type": "Answer","text": "The most popular areas for foreign buyers are Cabarete and Sosúa (North Coast, strong rental market), Punta Cana and Bávaro (East Coast, luxury resort corridor), Samaná and Las Terrenas (peninsula, high upside), Santo Domingo (urban investment), La Romana (luxury), and Jarabacoa (mountain region, retirees). The right choice depends entirely on your goals and budget."}},
-          {"@type": "Question","name": "What rental yields can I expect from DR investment properties?","acceptedAnswer": {"@type": "Answer","text": "Tourist zone properties in Cabarete and Punta Cana regularly achieve 8–12% gross rental yields annually. This is significantly higher than comparable markets in the US, Europe, or other Caribbean islands. Yields depend on location, property type, management quality, and how aggressively the property is listed on short-term rental platforms."}}
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "DR Property Tours & Matching",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Beach & Resort Condo Tours",
+              "description": "Private viewings of beachfront and resort condos in Cabarete, Punta Cana, Samaná and beyond"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Villa & House Tours",
+              "description": "Private villa and house viewings across all DR regions for buyers seeking space and privacy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Investment Property Consultation",
+              "description": "Expert guidance on Dominican Republic real estate investment, rental yields, and legal framework"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land & Development Lot Tours",
+              "description": "Guided tours of available land and development lots in beachfront, hillside, and rural locations"
+            }
+          }
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.dominicanrealestatetour.com/#website",
+      "name": "Dominican Republic Real Estate Tour",
+      "url": "https://www.dominicanrealestatetour.com/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.dominicanrealestatetour.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dominicanrealestatetour.com/"
+        }
+      ]
+    },
+    {
+      "@type": "Speakable",
+      "cssSelector": [
+        ".hero h1",
+        ".hero-desc",
+        ".quick-answer"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can foreigners buy property in the Dominican Republic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Foreign nationals have full property ownership rights in the Dominican Republic — the same rights as Dominican citizens. There are no restrictions on foreign buyers, no local partner requirements, and no limits on repatriating funds from a property sale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the average price of real estate in the Dominican Republic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entry-level beach condos in Cabarete and Sosúa start around $80,000–$120,000 USD. Mid-range resort condos in Punta Cana range from $150,000–$350,000. Luxury villas and oceanfront properties range from $400,000 to several million. Inland and mountain properties offer significantly more space for the price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Dominican Republic real estate tour?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Dominican Republic real estate tour is a private, guided property viewing experience arranged for serious buyers. We match your budget, preferences, and goals to available listings, then arrange in-person viewings with local real estate experts. It is not a group tour — every experience is tailored to the individual buyer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best areas to buy property in the Dominican Republic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most popular areas for foreign buyers are Cabarete and Sosúa (North Coast, strong rental market), Punta Cana and Bávaro (East Coast, luxury resort corridor), Samaná and Las Terrenas (peninsula, high upside), Santo Domingo (urban investment), La Romana (luxury), and Jarabacoa (mountain region, retirees). The right choice depends entirely on your goals and budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What rental yields can I expect from DR investment properties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tourist zone properties in Cabarete and Punta Cana regularly achieve 8–12% gross rental yields annually. This is significantly higher than comparable markets in the US, Europe, or other Caribbean islands. Yields depend on location, property type, management quality, and how aggressively the property is listed on short-term rental platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What closing costs should I budget for when buying in the DR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main cost is the 3% real estate transfer tax, paid when the title is transferred into your name. On top of that, budget for your attorney's fees, title search and registry fees, and notarization and translation of documents. Properties approved under the CONFOTUR tourism incentive law may be exempt from the transfer tax. Ask your attorney for a written estimate before you sign."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is CONFOTUR and how does it affect buyers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CONFOTUR is the Dominican Republic's tourism development incentive program created under Law 158-01. Qualifying tourism projects can offer buyers exemptions from the 3% transfer tax and from the annual IPI property tax for a set period, commonly up to 15 years. Not every project qualifies, so have your attorney confirm the project's CONFOTUR approval and the exact benefits that transfer to you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can foreigners get a mortgage in the Dominican Republic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some Dominican banks do lend to foreign buyers, but terms are usually stricter than in the US or Canada, with larger down payments, shorter terms and higher interest rates. Many international buyers pay cash, borrow against assets at home, or use developer payment plans on pre-construction projects. Compare options and have your attorney review any financing agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I hire my own attorney for a DR property purchase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An independent attorney works only for you, not the seller or agent. They confirm the seller holds a valid Certificado de Título at the Registro de Títulos, check for liens, mortgages and unpaid taxes, verify the survey (deslinde) where applicable, review the purchase contract and handle the title transfer after closing. It is the single most important protection a foreign buyer has."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <!-- ═══════════════════════════════════ -->
   <!-- JAVASCRIPT                        -->
@@ -1847,45 +1959,51 @@
     }
 
     function submitFinder() {
-      // Honeypot check
+      const status = document.getElementById('finder-status');
+      const say = (m) => { status.textContent = m; };
+      // Honeypot check: silently stop
       const hp = document.getElementById('hp-website');
       if (hp && hp.value.trim() !== '') return;
 
-      // Timing check — must have been on page > 4 seconds
-      const startTime = parseInt(document.getElementById('form-start-time').value, 10);
-      if (Date.now() - startTime < 4000) return;
+      // Timing check: page must have been open at least 3.5 seconds
+      const startTime = parseInt(document.getElementById('form-start-time').value, 10) || 0;
+      if (Date.now() - startTime < 3500) { say('Give the form a moment, then send again.'); return; }
 
       // Required fields
       const fname = document.getElementById('f-fname').value.trim();
       const lname = document.getElementById('f-lname').value.trim();
       const email = document.getElementById('f-email').value.trim();
-      if (!fname || !lname || !email) {
-        alert('Please fill in your name and email to complete your tour request.');
-        return;
-      }
-      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailReg.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-      }
+      if (!fname || !lname || !email) { say('Please fill in your name and email to complete your tour request.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('Please enter a valid email address.'); return; }
 
-      // Spam filter
-      const allText = fname + lname + email + document.getElementById('f-notes').value;
-      const spamCheck = /\b(viagra|casino|loan offer|buy now|click here|free money|crypto|bitcoin)\b/i;
-      if (spamCheck.test(allText)) return;
+      const fd = new FormData();
+      fd.append('first_name', fname);
+      fd.append('last_name', lname);
+      fd.append('email', email);
+      fd.append('phone', document.getElementById('f-phone').value.trim());
+      fd.append('notes', document.getElementById('f-notes').value.trim());
+      Object.keys(answers).forEach(k => fd.append(k, answers[k]));
+      fd.append('_subject', 'New lead — dominicanrealestatetour.com');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+      fd.append('_honey', '');
 
-      // Success — show confirmation
-      document.getElementById('finder-progress').style.display = 'none';
-      document.querySelectorAll('.quiz-step').forEach(s => s.style.display = 'none');
-      document.querySelector('.finder-body').style.display = 'none';
-      document.getElementById('quiz-success').style.display = 'block';
-
-      // In production, wire to FormSubmit or backend:
-      // fetch('https://formsubmit.co/ajax/sales@eyetoad.com', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      //   body: JSON.stringify({ fname, lname, email, phone: document.getElementById('f-phone').value, notes: document.getElementById('f-notes').value, ...answers })
-      // });
+      const btn = document.querySelector('.btn-quiz-submit');
+      if (btn) btn.disabled = true;
+      say('Sending...');
+      const addr = atob('aW5mbw==') + String.fromCharCode(64) + atob('ZXlldG9hZC5jb20=');
+      fetch('https://formsubmit.co/ajax/' + addr, { method: 'POST', headers: { Accept: 'application/json' }, body: fd })
+        .then(r => { if (!r.ok) throw new Error('http'); return r.json(); })
+        .then(d => {
+          if (d && String(d.success) === 'false') throw new Error('fs');
+          say("Sent. We'll get back to you shortly.");
+          document.getElementById('finder-progress').style.display = 'none';
+          document.querySelectorAll('.quiz-step').forEach(s => s.style.display = 'none');
+          document.querySelector('.finder-body').style.display = 'none';
+          document.getElementById('quiz-success').style.display = 'block';
+        })
+        .catch(() => { say('That did not go through. Please call 1-800-481-8638.'); })
+        .then(() => { if (btn) btn.disabled = false; });
     }
 
     // ─────────────────────────────────────
@@ -1925,12 +2043,28 @@
         a: "While we strongly recommend visiting in person — there is no substitute for walking a property and experiencing a neighborhood yourself — the Dominican Republic's legal system does support remote purchases via power of attorney. That said, our tours are designed to be efficient and enjoyable, and most buyers find the trip itself is one of the highlights of the entire process."
       },
       {
+        q: "What closing costs should I budget for when buying in the DR?",
+        a: "The main cost is the 3% real estate transfer tax, paid when the title is transferred into your name. On top of that, budget for your attorney's fees, title search and registry fees, and notarization and translation of documents. Properties approved under the CONFOTUR tourism incentive law may be exempt from the transfer tax. Ask your attorney for a written estimate before you sign."
+      },
+      {
+        q: "What is CONFOTUR and how does it affect buyers?",
+        a: "CONFOTUR is the Dominican Republic's tourism development incentive program created under Law 158-01. Qualifying tourism projects can offer buyers exemptions from the 3% transfer tax and from the annual IPI property tax for a set period, commonly up to 15 years. Not every project qualifies, so have your attorney confirm the project's CONFOTUR approval and the exact benefits that transfer to you."
+      },
+      {
+        q: "Can foreigners get a mortgage in the Dominican Republic?",
+        a: "Some Dominican banks do lend to foreign buyers, but terms are usually stricter than in the US or Canada, with larger down payments, shorter terms and higher interest rates. Many international buyers pay cash, borrow against assets at home, or use developer payment plans on pre-construction projects. Compare options and have your attorney review any financing agreement."
+      },
+      {
+        q: "Why should I hire my own attorney for a DR property purchase?",
+        a: "An independent attorney works only for you, not the seller or agent. They confirm the seller holds a valid Certificado de Título at the Registro de Títulos, check for liens, mortgages and unpaid taxes, verify the survey (deslinde) where applicable, review the purchase contract and handle the title transfer after closing. It is the single most important protection a foreign buyer has."
+      },
+      {
         q: "How do I get started with Dominican Republic Real Estate Tour?",
-        a: "Complete the Property Finder above — it takes under 2 minutes. Answer the questions about your goals, preferred region, property type, budget, and timeline. We'll review your profile, match you to current listings, and reach out within 24 hours to discuss next steps and schedule your tour. You can also email us directly at sales@eyetoad.com."
+        a: "Complete the Property Finder above — it takes under 2 minutes. Answer the questions about your goals, preferred region, property type, budget, and timeline. We'll review your profile, match you to current listings, and reach out within 24 hours to discuss next steps and schedule your tour. You can also email us using the General Inquiries link in the footer."
       },
       {
         q: "Are there advertising opportunities on this site?",
-        a: "Yes. If you're a real estate agent, developer, attorney, or service provider operating in the Dominican Republic, we offer featured placement opportunities on this site and across our keyword domain network. Contact us at sales@eyetoad.com with the subject line 'Advertising Inquiry' to discuss options and availability."
+        a: "Yes. If you're a real estate agent, developer, attorney, or service provider operating in the Dominican Republic, we offer featured placement opportunities on this site and across our keyword domain network. Use the Advertising Opportunities link in the footer to email us about options and availability."
       }
     ];
 
