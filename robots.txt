@@ -41,4 +41,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.dominicanrealestatetour.com/sitemap.xml
+Sitemap: https://dominicanrealestatetour.com/sitemap.xml
